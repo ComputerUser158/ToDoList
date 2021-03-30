@@ -4,16 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace ToDoApp.Models
 {
     public class ToDoContext : DbContext
 	{
 		public ToDoContext(DbContextOptions<ToDoContext> options) : base(options) { }
 
-		public DbSet<ToDo> Tickets { get; set; }
+		public DbSet<ToDo> Tickets { get; set;}
 		public DbSet<Sprint> Sprints { get; set; }
 		public DbSet<Point> Points { get; set; }
 		public DbSet<Status> Statuses { get; set; }
+
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
